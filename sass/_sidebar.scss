@@ -3,8 +3,15 @@
     grid-column: sidebar-start / sidebar-end;
     grid-row: 1 /-1;
     display: grid;
-    justify-items:center; 
+    justify-items: center;
     align-items: start;
+
+    @media only screen and (max-width: $bp-large) {
+        grid-column: 1/-1;
+        grid-row: 1/2;
+        justify-content: end;
+        align-content: center;
+    }
 }
 
 .nav-btn {
@@ -14,7 +21,7 @@
     background-color: #fff;
     height: 2px;
     width: 4rem;
-    margin-top : 3rem;
+    margin-top: 3rem;
 
     &::before,
     &::after {
@@ -25,11 +32,29 @@
         display: block;
         cursor: pointer;
     }
-    &::before{
+
+    &::before {
         transform: translateY(1.5rem);
     }
-    &::after{
+
+    &::after {
         transform: translateY(-1.7rem);
+    }
+
+    @media only screen and (max-width: $bp-large) {
+        margin-top: 0;
+        margin-right: 3rem;
+        width: 3rem;
+
+        &::before {
+            transform: translateY(1.1rem);
+            width: 3rem;
+        }
+
+        &::after {
+            transform: translateY(-1.3rem);
+            width: 3rem;
+        }
     }
 
 }
